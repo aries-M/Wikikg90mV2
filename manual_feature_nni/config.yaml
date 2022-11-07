@@ -1,0 +1,16 @@
+experimentName: manual feature
+searchSpaceFile: searchspace.json
+trialConcurrency: 15
+maxExperimentDuration: 48h
+maxTrialNumber: 10000
+tuner:
+  name: TPE
+  classArgs:
+    optimize_mode: maximize
+
+trialCommand:  python3 manualfeat.py --data_path '../test_dev/'  --nni
+trialCodeDirectory: .
+
+trainingService:
+  platform: local
+  useActiveGpu: false
